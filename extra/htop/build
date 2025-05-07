@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# Arguments: $1 is the destination directory for installation (e.g., $pkg_dir/htop)
+dest="$1"
+
+# Configure the build with ncurses support and install to the specified prefix
+./configure --prefix=/usr --enable-unicode --enable-cgroup
+
+# Build and install
+make
+make install DESTDIR="$dest"
