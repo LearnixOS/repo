@@ -1,4 +1,4 @@
-#!/bin/sh -e
+                    #!/bin/sh -e
 
 patch -p1 < iconv_fix_erroneous_input_validation.patch
 patch -p1 < iconv_harden_utf-8_output.patch

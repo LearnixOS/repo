@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+make
+
+install -Dm755 lxsh "$1/usr/bin/lxsh"
+ln -snv $1/usr/bin/lxsh $1/usr/bin/sh
