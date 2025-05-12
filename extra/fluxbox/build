@@ -1,0 +1,31 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+# Apply a patch to fix a build failure with gcc-11.1 or later
+sed -i '/text_prop.value > 0/s/>/!=/' util/fluxbox-remote.cc
+
+# Build Fluxbox
+./configure \
+    --prefix=/usr
+
+make
+make DESTDIR="$DESTDIR" install
+
+# Create the xsessions entry for display managers like GDM or LightDM
+mkdir -pv "$DESTDIR/usr/share/xsessions"
+cat > "$DESTDIR/usr/share/xsessions/fluxbox.desktop" << "EOF"
+[Desktop Entry]
+Encoding=UTF-8
+Name=Fluxbox
+Comment=This session logs you into Fluxbox
+Exec=startfluxbox
+Type=Application
+EOF
+
+# Provide default Fluxbox configuration in the user's home directory
+mkdir -pv "$DESTDIR/etc/skel/.fluxbox"
+cp -v /usr/share/fluxbox/init "$DESTDIR/etc/skel/.fluxbox/init"
+cp -v /usr/share/fluxbox/keys "$DESTDIR/etc/skel/.fluxbox/keys"
+cp -v /usr/share/fluxbox/menu "$DESTDIR/etc/skel/.fluxbox/menu"
+

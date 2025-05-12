@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+./mach --no-interactive bootstrap --application-choice=browser
+./lw/setup-wasi-linux.sh
+
+./mach build
+./mach package
+./mach run

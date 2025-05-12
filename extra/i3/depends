@@ -1,0 +1,13 @@
+meson
+ninja
+pkgconf
+libxcb
+xcb-util
+xcb-util-wm
+xcb-util-keysyms
+xcb-util-cursor
+libev
+pango
+yajl
+libxkbcommon
+

@@ -1,0 +1,7 @@
+bash
+sed
+grep
+procps-ng
+awk
+python3
+psutil
