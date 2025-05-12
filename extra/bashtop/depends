@@ -1,5 +1,3 @@
-awk
-bash
 grep
 procps-ng
 psutil
