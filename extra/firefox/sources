@@ -1,6 +1,1 @@
-https://ftp.mozilla.org/pub/firefox/releases/138.0.1/source/firefox-138.0.1.source.tar.xz
-patches/fix-target-detection.patch
-patches/musl-sandbox.patch
-patches/no-atk.patch
-patches/no-dbus.patch
-patches/no-fribidi.patch
+https://archive.mozilla.org/pub/firefox/releases/128.10.0esr/source/firefox-128.10.0esr.source.tar.xz
