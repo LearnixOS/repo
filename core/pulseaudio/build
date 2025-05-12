@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --disable-static \
+    --disable-bluez5 \
+    --disable-avahi \
+    --disable-systemd \
+    --disable-gtk3 \
+    --disable-udev \
+    --disable-hal
+
+make
+make DESTDIR="$1" install
+
