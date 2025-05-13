@@ -1,8 +1,0 @@
-NAME="SLIM/LearnixOS"
-PRETTY_NAME="SLIM/LearnixOS"
-ID=lxos
-BUILD_ID=rolling
-HOME_URL="https://learnixos.github.io"
-DOCUMENTATION_URL=""
-SUPPORT_URL="https://github.com/LearnixOS"
-BUG_REPORT_URL="https://github.com/LearnixOS"
