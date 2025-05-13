@@ -1,0 +1,12 @@
+libsndfile
+alsa-lib
+dbus
+glib
+speex
+libxcb
+libx11
+libxtst
+tdb
+orc
+fftw
+webrtc-audio-processing

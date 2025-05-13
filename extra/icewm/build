@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+# Define the destination directory
+export DESTDIR="$1"
+
+mkdir build && cd build
+
+cmake -D CMAKE_INSTALL_PREFIX=/usr \
+      -D CMAKE_BUILD_TYPE=Release  \
+      -D CFGDIR=/etc               \
+      -D ENABLE_LTO=ON             \
+      -D DOCDIR=/usr/share/doc/icewm-3.7.4  ..
+
+make
+
+make install
+
