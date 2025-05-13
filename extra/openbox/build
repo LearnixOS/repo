@@ -1,8 +1,6 @@
 #!/bin/sh
 export LIBRARY_PATH=$XORG_PREFIX/lib
 
-patch -Np1 -i ../openbox-3.6.1-py3-1.patch
-
 autoreconf -fi
 ./configure --prefix=/usr \
             --sysconfdir=/etc \
