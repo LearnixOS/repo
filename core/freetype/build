@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --enable-freetype-config \
+    --disable-static
+
+make
+make DESTDIR="$1" install
+
