@@ -1,0 +1,8 @@
+python3
+freetype
+harfbuzz
+libgl
+libx11
+libxkbcommon
+zlib
+

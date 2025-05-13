@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+python3 setup.py linux-package --prefix=/usr
+install -Dm755 kitty/launcher/kitty "$1/usr/bin/kitty"
+install -Dm644 kitty/launcher/kitty.desktop "$1/usr/share/applications/kitty.desktop"
+install -Dm644 kitty/logo/kitty.svg "$1/usr/share/icons/hicolor/scalable/apps/kitty.svg"
+
