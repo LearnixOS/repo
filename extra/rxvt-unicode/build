@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+# Build
+./configure --prefix=/usr --enable-everything
+make
+
+# Install
+make DESTDIR="$1" install
+
+# Additional desktop entry
+cat > "$1/usr/share/applications/urxvt.desktop" << 'EOF'
+[Desktop Entry]
+Encoding=UTF-8
+Name=Rxvt-Unicode Terminal
+Comment=Use the command line
+GenericName=Terminal
+Exec=urxvt
+Terminal=false
+Type=Application
+Icon=utilities-terminal
+Categories=GTK;Utility;TerminalEmulator;
+#StartupNotify=true
+Keywords=console;command line;execute;
+EOF
+
+# Update the desktop database
+update-desktop-database -q
+
