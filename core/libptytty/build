@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+mkdir build
+cd build
+
+cmake .. \
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DPT_UTMP_FILE:STRING=/run/utmp
+
+make
+make DESTDIR="$1" install
+
