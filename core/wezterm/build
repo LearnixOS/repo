@@ -1,5 +1,0 @@
-#!/bin/sh -e
-
-cargo build --release
-cargo install --path . --root "$1/usr"
-
