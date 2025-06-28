@@ -1,0 +1,25 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+meson setup --prefix=/usr            \
+            --buildtype=release      \
+            -D gallium-drivers=      \
+            -D vulkan-drivers=       \
+            -D video-codecs=         \
+            -D gbm=enabled           \
+            -D glx=disabled          \
+            -D llvm=disabled         \
+            -D valgrind=disabled     \
+            -D libunwind=disabled    \
+            output
+
+ninja -C output
+ninja -C output install
+
+mkdir -pv $1/usr/include/GL/internal &&
+cp -v ./include/GL/internal/dri_interface.h $1/usr/include/GL/internal
+if test -d $1/usr/include/EGL; then
+  cp -v ./include/EGL/eglmesaext.h $1/usr/include/EGL
+fi
+

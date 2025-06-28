@@ -1,0 +1,5 @@
+mesa-gbm
+
+----------------------------------------
+
+This is for the NVIDIA driver as all you need for that is MESA-GBM and not the whole suite, get this if you have a system with NVIDIA.
